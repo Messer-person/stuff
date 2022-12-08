@@ -17,7 +17,7 @@ def string_cutter(string_para):
     return output2
 
 
-# Checks for a correct numbers in correct place in a sequence. and stuff.
+# Checks for a correct numbers in correct place in a sequence.
 def cows(correct_pin, guess_para):
     cows = 0
     x = 0
@@ -30,7 +30,7 @@ def cows(correct_pin, guess_para):
     return cows
 
 
-#Checks for a correct numbers in a incorrect place in a sequence.
+# Checks for a correct numbers in a incorrect place in a sequence.
 def bulls(correct_pin, guess_para, cow_para):
     guess_shattered = string_cutter(guess_para)
     pin_shattered = string_cutter(correct_pin)
