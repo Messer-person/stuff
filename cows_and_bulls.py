@@ -10,7 +10,7 @@ def generator():
 
 
 # Cuts up a string into a list of strings components.
-def string_cutter(string_para):
+def string_cutter(string_para):  # What is the point of this function? Strings are already iterable.
     output2 = []
     for num in string_para:
         output2.append(num)
@@ -19,27 +19,27 @@ def string_cutter(string_para):
 
 # Checks for a correct numbers in correct place in a sequence.
 def cows(correct_pin, guess_para):
-    cows = 0
+    cow_count = 0  # Stop shadowing names from outer scope!!11!1!
     x = 0
-    for numb in guess_para:
+    for _ in guess_para:
         if correct_pin[x] == guess_para[x]:
-            cows += 1
+            cow_count += 1
             x += 1
         else:
             x += 1
-    return cows
+    return cow_count
 
 
-# Checks for a correct numbers in a incorrect place in a sequence.
+# Checks for a correct numbers in an incorrect place in a sequence.
 def bulls(correct_pin, guess_para, cow_para):
     guess_shattered = string_cutter(guess_para)
     pin_shattered = string_cutter(correct_pin)
-    bull = 0
+    bull_count = 0  # Same here
     for number in guess_shattered:
         if number in pin_shattered:
-            bull += 1
+            bull_count += 1
             pin_shattered.remove(number)
-    return bull - cow_para
+    return bull_count - cow_para
 
 
 pin = generator()
@@ -70,5 +70,6 @@ while True:
     else:
         cow = cows(pin, guess)
         bull = bulls(pin, guess, cow)
+        # These two could have been 1 function, you can return more than one object in a single function.
         print(f"cows: {cow}, bulls: {bull}")
         pass
