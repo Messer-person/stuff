@@ -11,7 +11,7 @@ def generator():
 
 
 # Cuts up a string into a list of strings components.
-def string_cutter(string_para):
+def string_cutter(string_para):  # What is the point of this function? Strings are already iterable.
     output2 = []
     for num in string_para:
         output2.append(num)
@@ -20,6 +20,7 @@ def string_cutter(string_para):
 
 # Checks for a correct numbers in correct place in a sequence.
 def cows(correct_pin, guess_para):
+<<<<<<< HEAD
     cows_count = 0
     x = 0
     for _ in guess_para:
@@ -29,18 +30,38 @@ def cows(correct_pin, guess_para):
         else:
             x += 1
     return cows_count
+=======
+    cow_count = 0  # Stop shadowing names from outer scope!!11!1!
+    x = 0
+    for _ in guess_para:
+        if correct_pin[x] == guess_para[x]:
+            cow_count += 1
+            x += 1
+        else:
+            x += 1
+    return cow_count
+>>>>>>> 89064f855bed871a88d38502793aabef7f7356fb
 
 
 # Checks for a correct numbers in an incorrect place in a sequence.
 def bulls(correct_pin, guess_para, cow_para):
     guess_shattered = string_cutter(guess_para)
     pin_shattered = string_cutter(correct_pin)
+<<<<<<< HEAD
     bulls_count = 0
     for number in guess_shattered:
         if number in pin_shattered:
             bulls_count += 1
             pin_shattered.remove(number)
     return bulls_count - cow_para
+=======
+    bull_count = 0  # Same here
+    for number in guess_shattered:
+        if number in pin_shattered:
+            bull_count += 1
+            pin_shattered.remove(number)
+    return bull_count - cow_para
+>>>>>>> 89064f855bed871a88d38502793aabef7f7356fb
 
 
 pin = generator()
@@ -89,5 +110,12 @@ while True:
         time.sleep(2)
         break
     else:
+<<<<<<< HEAD
         print("Wrong command, please try again: ")
+=======
+        cow = cows(pin, guess)
+        bull = bulls(pin, guess, cow)
+        # These two could have been 1 function, you can return more than one object in a single function.
+        print(f"cows: {cow}, bulls: {bull}")
+>>>>>>> 89064f855bed871a88d38502793aabef7f7356fb
         pass
