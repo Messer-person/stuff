@@ -150,64 +150,64 @@
 
 # ---------------------------------------------------------------------------------------------------------------------
 
-# Generate a random number between 1 and 9 (including 1 and 9). Ask the user to guess the number, then tell them
-# whether they guessed too low, too high, or exactly right. (Hint: remember to use the user input lessons from the
-# very first exercise)
+# # Generate a random number between 1 and 9 (including 1 and 9). Ask the user to guess the number, then tell them
+# # whether they guessed too low, too high, or exactly right. (Hint: remember to use the user input lessons from the
+# # very first exercise)
+# #
+# # Extras:
+# #
+# # Keep the game going until the user types “exit”
+# # Keep track of how many guesses the user has taken, and when the game ends, print this out.
 #
-# Extras:
+# import random
+# import time
 #
-# Keep the game going until the user types “exit”
-# Keep track of how many guesses the user has taken, and when the game ends, print this out.
-
-import random
-import time
-
-
-def play_guesser():
-    print('guess the number Im thinking about. type "quit" to exit the game')
-    tries = 0
-    number = random.randrange(1, 10)
-    while True:
-        players_guess = (input("your guess: "))
-
-        # establish msg output, keeping count of tries:
-
-        try:
-            if int(players_guess) in range(1, 10):
-                if number == int(players_guess):
-                    msg = "Correct!"
-                elif int(players_guess) > number:
-                    msg = "Wrong, too high."
-                else:
-                    msg = "wrong, too low."
-                tries += 1
-            else:
-                msg = "error"
-        except ValueError:
-            if (players_guess.upper()).strip() == "QUIT" or (players_guess.upper()).strip() == "Q":
-                print("Thank you for playing.")
-                time.sleep(1)
-                break
-            else:
-                msg = "error"
-
-        # delivering the output:
-
-        if msg == "Correct!":
-
-            # Clear variables, and establish new ones:
-
-            print(f'{msg} It took you {tries} tries.')
-            number = random.randrange(1, 10)
-            tries = 0
-            print("lets play again!")
-        elif msg == "error":
-            print("input one number between 1 - 9, or a command to quit.")
-        else:
-            print(msg)
-
-
-play_guesser()
+#
+# def play_guesser():
+#     print('guess the number Im thinking about. type "quit" to exit the game')
+#     tries = 0
+#     number = random.randrange(1, 10)
+#     while True:
+#         players_guess = (input("your guess: "))
+#
+#         # establish input, msg output, keeping count of tries:
+#
+#         try:
+#             if int(players_guess) in range(1, 10):
+#                 if number == int(players_guess):
+#                     msg = "Correct!"
+#                 elif int(players_guess) > number:
+#                     msg = "Wrong, too high."
+#                 else:
+#                     msg = "wrong, too low."
+#                 tries += 1
+#             else:
+#                 msg = "error"
+#         except ValueError:
+#             if players_guess.upper().strip() == "QUIT" or (players_guess.upper()).strip() == "Q":
+#                 print("Thank you for playing.")
+#                 time.sleep(1)
+#                 break
+#             else:
+#                 msg = "error"
+#
+#         # delivering the output:
+#
+#         if msg == "Correct!":
+#
+#             # Clear variables, and establish new ones:
+#
+#             print(f'{msg} It took you {tries} tries.')
+#             number = random.randrange(1, 10)
+#             tries = 0
+#             print("lets play again!")
+#         elif msg == "error":
+#             print("input one number between 1 - 9, or a command to quit.")
+#         else:
+#             print(msg)
+#
+#
+# play_guesser()
 
 # --------------------------------------------------------------------------------------------------------------------
 
@@ -253,3 +253,17 @@ play_guesser()
 # x = "top"
 # print((x.split(maxsplit=True)).sort(reverse=True))
 # # practicing_trying()
+
+
+# def cutter(random_string):
+#     output = []
+#     for sign in random_string:
+#         output.append(sign)
+#     return output
+#
+#
+# print(cutter("hababla"))
+
+x = "hababla"
+
+print([item for item in x])
