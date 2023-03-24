@@ -210,60 +210,62 @@
 # play_guesser()
 
 # --------------------------------------------------------------------------------------------------------------------
-
-# # try thing experimentation
+# # string_reversing_tool
 #
+# def uno_tool(string):
+#     return "".join([sign for sign in string[::-1]])
+#
+#
+# # random_stuff = input("say a word: ")
+# # print(uno_tool(random_stuff))
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# try thing experimentation
+
 # x = "T"
 # if int(x) in range(1, 10):
 #     print(x)
 
-# # ValueError
+# ValueError
+def uno_tool(string):
+    return "".join([sign for sign in string[::-1]])
 
 
-# def practicing_trying():
-#     while True:
-#         x = input("Say some shit or a number:")
-#         try:
-#             if int(x) % 3 == 0 and int(x) % 2 == 0:
-#                 mgs = "it's a number, and multiplication of 3, AND 2!"
-#             elif int(x) % 2 == 0:
-#                 msg = "it's a number, and multiplication of 2"
-#             else:
-#                 if int(x) < 10:
-#                     msg = "it's a number, and not very high one at that"
-#                 else:
-#                     msg = "it's a number, don't know what else to tell you about it"
-#         except ValueError:
-#             if (x.split(maxsplit=True)).sort(reverse=True) == x:
-#                     msg = "ah, that word is a polidrone!"
-#             elif x.upper() == "QUIT":
-#                 msg = "ok,bye"
-#             else:
-#                 msg = "eeeh it's a string..."
-#         # executing commands
-#
-#         print(msg)
-#         if msg == "ok,bye":
-#             break
-#
-#
-#
-#
-#
+def practicing_trying():
+    while True:
+        x = input("Say some shit or a number:")
+        try:
+            if int(x) % 3 == 0 and int(x) % 2 == 0:
+                msg = "it's a number, and multiplication of 3, AND 2!"
+            elif int(x) % 2 == 0:
+                msg = "it's a number, and multiplication of 2"
+            else:
+                if int(x) <= 10:
+                    msg = "it's a number, and not very high one at that"
+                else:
+                    msg = "it's a number, don't know what else to tell you about it"
+        except ValueError:
+            if uno_tool(x) == x:
+                msg = "ah, that word is a palindrome!"
+            elif x.upper() == "QUIT":
+                msg = "ok,bye"
+            else:
+                msg = "eeeh it's a string..."
+        # executing commands
+
+        print(msg)
+        if msg == "ok,bye":
+            break
+
+
+# print([item for item in "hababla"])
 # x = "top"
-# print((x.split(maxsplit=True)).sort(reverse=True))
-# # practicing_trying()
-
-
-# def cutter(random_string):
-#     output = []
-#     for sign in random_string:
-#         output.append(sign)
-#     return output
+# y = [sign for sign in x[::-1]]
+# rf = 4
 #
-#
-# print(cutter("hababla"))
-
-x = "hababla"
-
-print([item for item in x])
+# z = "top"
+# print(y)
+# print([sign for sign in x])
+# print([sign for sign in x] == [sign for sign in x[::-1]])
+practicing_trying()
