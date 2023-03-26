@@ -77,7 +77,7 @@
 
 # --------------------------------------------------------------------------------------------------------------------
 
-# array = [1, 2, 45, 7, 2, 8, 2, 7, 9, 34, 54, 254, 2, 67, 2, 6, 7, 24]
+array = [1, 2, 45, 7, 2, 8, 2, 7, 9, 34, 54, 254, 2, 67, 2, 6, 7, 24]
 #
 # def bubble_sorting(listx):
 #     n = len(listx)
@@ -220,52 +220,129 @@
 # # print(uno_tool(random_stuff))
 
 # ---------------------------------------------------------------------------------------------------------------------
-
-# try thing experimentation
-
-# x = "T"
-# if int(x) in range(1, 10):
-#     print(x)
-
-# ValueError
-def uno_tool(string):
-    return "".join([sign for sign in string[::-1]])
-
-
-def practicing_trying():
-    while True:
-        x = input("Say some shit or a number:")
-        try:
-            if int(x) % 3 == 0 and int(x) % 2 == 0:
-                msg = "it's a number, and multiplication of 3, AND 2!"
-            elif int(x) % 2 == 0:
-                msg = "it's a number, and multiplication of 2"
-            else:
-                if int(x) <= 10:
-                    msg = "it's a number, and not very high one at that"
-                else:
-                    msg = "it's a number, don't know what else to tell you about it"
-        except ValueError:
-            if uno_tool(x) == x:
-                msg = "ah, that word is a palindrome!"
-            elif x.upper() == "QUIT":
-                msg = "ok,bye"
-            else:
-                msg = "eeeh it's a string..."
-        # executing commands
-
-        print(msg)
-        if msg == "ok,bye":
-            break
-
-
-# print([item for item in "hababla"])
-# x = "top"
-# y = [sign for sign in x[::-1]]
-# rf = 4
 #
-# z = "top"
-# print(y)
-# print([sign for sign in x])
-# print([sign for sign in x] == [sign for sign in x[::-1]])
-practicing_trying()
+# # try thing experimentation
+#
+# # x = "T"
+# # if int(x) in range(1, 10):
+# #     print(x)
+#
+# # ValueError
+# def uno_tool(string):
+#     return "".join([sign for sign in string[::-1]])
+#
+#
+# def practicing_trying():
+#     while True:
+#         x = input("Say some shit or a number:")
+#         try:
+#             if int(x) % 3 == 0 and int(x) % 2 == 0:
+#                 msg = "it's a number, and multiplication of 3, AND 2!"
+#             elif int(x) % 2 == 0:
+#                 msg = "it's a number, and multiplication of 2"
+#             else:
+#                 if int(x) <= 10:
+#                     msg = "it's a number, and not very high one at that"
+#                 else:
+#                     msg = "it's a number, don't know what else to tell you about it"
+#         except ValueError:
+#             if uno_tool(x) == x:
+#                 msg = "ah, that word is a palindrome!"
+#             elif x.upper() == "QUIT":
+#                 msg = "ok,bye"
+#             else:
+#                 msg = "eeeh it's a string..."
+#         # executing commands
+#
+#         print(msg)
+#         if msg == "ok,bye":
+#             break
+#
+#
+# # print([item for item in "hababla"])
+# # x = "top"
+# # y = [sign for sign in x[::-1]]
+# # rf = 4
+# #
+# # z = "top"
+# # print(y)
+# # print([sign for sign in x])
+# # print([sign for sign in x] == [sign for sign in x[::-1]])
+# practicing_trying()
+
+# ---------------------------------------------------------------------------------------------------------------------
+
+# # Dictionary comprehension
+#
+# x = "badamdabamdabam"
+# # y = [item for item in x]
+# # y = [*x]
+# z = {item: [*x].count(item) for item in [*x]}
+# a = []
+# # print(item[0] for group in z if item[1] > 6)
+# print(z)
+#
+#
+# def sort_dict(item):
+#     return item[1]
+#
+#
+# def sorting_by_appearance_frequency(idk):
+#     idk.sort(idk[1])
+#
+#
+# # print(z.sort(key=sorting_by_appearance_frequency))
+#
+# # for sign, amount in item:
+# #     x=1
+# #     a.append(item)
+# #     if item[1] >
+# #
+#
+# print(a)
+# b = [*z]
+# print(*b)
+#
+# # "*" ->it's an unpacking operator
+#
+# # for item in z:
+# #     n = len(z)
+# #     a.append(item)
+# #     x = 1
+# #     if
+#
+#
+# def dict_sign_amount(string):
+#     # exp for item in items
+#     return {item: [*string].count(item) for item in [*string]}
+#
+#
+# dic = dict_sign_amount(x)
+# print(f"dic = {dic}")
+# dic_signs = [*dic]
+# print(dic_signs)
+#
+#
+# def analizer(dictionary):
+#     keys_list = [*dictionary]
+#     values_list = [dictionary[key] for key in keys_list]
+#     # for key in keys_list:
+#     #     values_list.append(dictionary[key])
+#     dict_to_list = list(zip(keys_list, values_list))
+#     # lamda expression -> argument(s): expression
+#     dict_to_list.sort(key=lambda item: item[1])
+#     answer = dict_to_list[-1]
+#     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
+
+
+def string_counter(string):
+    dictionary = {sign: [*string].count(sign) for sign in [*string]}
+    keys_list = [*dictionary]
+    values_list = [dictionary[key] for key in keys_list]
+    dict_to_list = list(zip(keys_list, values_list))
+    dict_to_list.sort(key=lambda item: item[1])
+    answer = dict_to_list[-1]
+    return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
+
+x = "badamdabamdabam"
+print(string_counter(x))
