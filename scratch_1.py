@@ -394,10 +394,18 @@ print(letter_counter(sentence))
 
 
 # change introduced by Pawel
+# def character_counter(string):
+#     counted_chars = {char: string.count(char) for char in string}
+#     result = max(counted_chars.items(), key=lambda item: item[1])
+#     return f"""In that sentence the most common sign is "{result[0]}", it appeared {result[1]} times"""
+
+
 def character_counter(string):
-    counted_chars = {char: string.count(char) for char in string}
-    result = max(counted_chars.items(), key=lambda item: item[1])
+    undesirable = "1234567890 -=!@#$%^&*()_+/.,?><';:][}{}"
+    counted_chars = {char: string.count(char) for char in string if char not in undesirable}
+    result = max(counted_chars.items(), key=lambda char: char[1])
     return f"""In that sentence the most common sign is "{result[0]}", it appeared {result[1]} times"""
 
 
 print(character_counter(x))
+print(character_counter(sentence))
