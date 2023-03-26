@@ -335,14 +335,45 @@ array = [1, 2, 45, 7, 2, 8, 2, 7, 9, 34, 54, 254, 2, 67, 2, 6, 7, 24]
 #     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
 
 
+# def string_counter(string):
+#     dictionary = {sign: [*string].count(sign) for sign in [*string]}
+#     keys_list = [*dictionary]
+#     values_list = [dictionary[key] for key in keys_list]
+#     dict_to_list = list(zip(keys_list, values_list))
+#     # dict_to_list = dictionary.items()
+#     dict_to_list.sort(key=lambda item: item[1])
+#     answer = dict_to_list[-1]
+#     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
+
+
+x = "badamdabamdabam"
+# print(string_counter(x))
+
+# z = {item: [*x].count(item) for item in [*x]}
+# list_thing = z.items()
+# print(list_thing)
+# pffft = sorted(list_thing, key=lambda item: item[1])
+# print(pffft)
+# print(pffft[-1])
+
+
+# def string_counter(string):
+#     dictionary = {sign: [*string].count(sign) for sign in [*string]}
+#     # keys_list = [*dictionary]
+#     # values_list = [dictionary[key] for key in keys_list]
+#     # dict_to_list = list(zip(keys_list, values_list))
+#     # # dict_to_list = dictionary.items()
+#     # dict_to_list.sort(key=lambda item: item[1])
+#     dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
+#     answer = dict_to_list[-1]
+#     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
+
+
 def string_counter(string):
     dictionary = {sign: [*string].count(sign) for sign in [*string]}
-    keys_list = [*dictionary]
-    values_list = [dictionary[key] for key in keys_list]
-    dict_to_list = list(zip(keys_list, values_list))
-    dict_to_list.sort(key=lambda item: item[1])
+    dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
     answer = dict_to_list[-1]
     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
 
-x = "badamdabamdabam"
+
 print(string_counter(x))
