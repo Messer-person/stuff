@@ -391,3 +391,13 @@ sentence = "this is one of the most common interview questions, but I hope not f
 
 print(sign_counter(sentence))
 print(letter_counter(sentence))
+
+
+# change introduced by Pawel
+def character_counter(string):
+    counted_chars = {char: string.count(char) for char in string}
+    result = max(counted_chars.items(), key=lambda item: item[1])
+    return f"""In that sentence the most common sign is "{result[0]}", it appeared {result[1]} times"""
+
+
+print(character_counter(x))
