@@ -369,11 +369,25 @@ x = "badamdabamdabam"
 #     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
 
 
-def string_counter(string):
+def sign_counter(string):
     dictionary = {sign: [*string].count(sign) for sign in [*string]}
     dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
     answer = dict_to_list[-1]
     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
 
 
-print(string_counter(x))
+def letter_counter(string):
+    dictionary = {sign: [*string].count(sign) for sign in [*string]}
+    dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
+    undesirable = [" ", "'", ",", ".", "!", "?", "/", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+    cleared = [item for item in dict_to_list if item[0] not in undesirable]
+    answer = cleared[-1]
+    return f"""In that sentence the most common letter is "{answer[0]}", it appeared {answer[1]} times"""
+
+
+print(sign_counter(x))
+
+sentence = "this is one of the most common interview questions, but I hope not for an intern, or a junior position..."
+
+print(sign_counter(sentence))
+print(letter_counter(sentence))
