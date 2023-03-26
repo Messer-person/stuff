@@ -369,11 +369,11 @@ x = "badamdabamdabam"
 #     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
 
 
-def string_counter(string):
-    dictionary = {sign: [*string].count(sign) for sign in [*string]}
-    dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
-    answer = dict_to_list[-1]
-    return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
+def character_counter(string):
+    counted_chars = {char: string.count(char) for char in string}
+    result = max(counted_chars.items(), key=lambda item: item[1])
+    return f"""In that sentence the most common sign is "{result[0]}", it appeared {result[1]} times"""
 
 
-print(string_counter(x))
+x = "badamdabamdabam"
+print(character_counter(x))
