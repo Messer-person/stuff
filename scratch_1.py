@@ -274,138 +274,168 @@ array = [1, 2, 45, 7, 2, 8, 2, 7, 9, 34, 54, 254, 2, 67, 2, 6, 7, 24]
 
 # # Dictionary comprehension
 #
-# x = "badamdabamdabam"
-# # y = [item for item in x]
-# # y = [*x]
-# z = {item: [*x].count(item) for item in [*x]}
-# a = []
-# # print(item[0] for group in z if item[1] > 6)
-# print(z)
-#
-#
-# def sort_dict(item):
-#     return item[1]
-#
-#
-# def sorting_by_appearance_frequency(idk):
-#     idk.sort(idk[1])
-#
-#
-# # print(z.sort(key=sorting_by_appearance_frequency))
-#
-# # for sign, amount in item:
-# #     x=1
-# #     a.append(item)
-# #     if item[1] >
+# # x = "badamdabamdabam"
+# # # y = [item for item in x]
+# # # y = [*x]
+# # z = {item: [*x].count(item) for item in [*x]}
+# # a = []
+# # # print(item[0] for group in z if item[1] > 6)
+# # print(z)
 # #
+# #
+# # def sort_dict(item):
+# #     return item[1]
+# #
+# #
+# # def sorting_by_appearance_frequency(idk):
+# #     idk.sort(idk[1])
+# #
+# #
+# # # print(z.sort(key=sorting_by_appearance_frequency))
+# #
+# # # for sign, amount in item:
+# # #     x=1
+# # #     a.append(item)
+# # #     if item[1] >
+# # #
+# #
+# # print(a)
+# # b = [*z]
+# # print(*b)
+# #
+# # # "*" ->it's an unpacking operator
+# #
+# # # for item in z:
+# # #     n = len(z)
+# # #     a.append(item)
+# # #     x = 1
+# # #     if
+# #
+# #
+# # def dict_sign_amount(string):
+# #     # exp for item in items
+# #     return {item: [*string].count(item) for item in [*string]}
+# #
+# #
+# # dic = dict_sign_amount(x)
+# # print(f"dic = {dic}")
+# # dic_signs = [*dic]
+# # print(dic_signs)
+# #
+# #
+# # def analizer(dictionary):
+# #     keys_list = [*dictionary]
+# #     values_list = [dictionary[key] for key in keys_list]
+# #     # for key in keys_list:
+# #     #     values_list.append(dictionary[key])
+# #     dict_to_list = list(zip(keys_list, values_list))
+# #     # lamda expression -> argument(s): expression
+# #     dict_to_list.sort(key=lambda item: item[1])
+# #     answer = dict_to_list[-1]
+# #     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
 #
-# print(a)
-# b = [*z]
-# print(*b)
 #
-# # "*" ->it's an unpacking operator
-#
-# # for item in z:
-# #     n = len(z)
-# #     a.append(item)
-# #     x = 1
-# #     if
-#
-#
-# def dict_sign_amount(string):
-#     # exp for item in items
-#     return {item: [*string].count(item) for item in [*string]}
+# # def string_counter(string):
+# #     dictionary = {sign: [*string].count(sign) for sign in [*string]}
+# #     keys_list = [*dictionary]
+# #     values_list = [dictionary[key] for key in keys_list]
+# #     dict_to_list = list(zip(keys_list, values_list))
+# #     # dict_to_list = dictionary.items()
+# #     dict_to_list.sort(key=lambda item: item[1])
+# #     answer = dict_to_list[-1]
+# #     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
 #
 #
-# dic = dict_sign_amount(x)
-# print(f"dic = {dic}")
-# dic_signs = [*dic]
-# print(dic_signs)
+# x = "badamdabamdabam"
+# # print(string_counter(x))
+#
+# # z = {item: [*x].count(item) for item in [*x]}
+# # list_thing = z.items()
+# # print(list_thing)
+# # pffft = sorted(list_thing, key=lambda item: item[1])
+# # print(pffft)
+# # print(pffft[-1])
 #
 #
-# def analizer(dictionary):
-#     keys_list = [*dictionary]
-#     values_list = [dictionary[key] for key in keys_list]
-#     # for key in keys_list:
-#     #     values_list.append(dictionary[key])
-#     dict_to_list = list(zip(keys_list, values_list))
-#     # lamda expression -> argument(s): expression
-#     dict_to_list.sort(key=lambda item: item[1])
-#     answer = dict_to_list[-1]
-#     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
-
-
-# def string_counter(string):
+# # def string_counter(string):
+# #     dictionary = {sign: [*string].count(sign) for sign in [*string]}
+# #     # keys_list = [*dictionary]
+# #     # values_list = [dictionary[key] for key in keys_list]
+# #     # dict_to_list = list(zip(keys_list, values_list))
+# #     # # dict_to_list = dictionary.items()
+# #     # dict_to_list.sort(key=lambda item: item[1])
+# #     dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
+# #     answer = dict_to_list[-1]
+# #     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
+#
+#
+# def sign_counter(string):
 #     dictionary = {sign: [*string].count(sign) for sign in [*string]}
-#     keys_list = [*dictionary]
-#     values_list = [dictionary[key] for key in keys_list]
-#     dict_to_list = list(zip(keys_list, values_list))
-#     # dict_to_list = dictionary.items()
-#     dict_to_list.sort(key=lambda item: item[1])
-#     answer = dict_to_list[-1]
-#     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
-
-
-x = "badamdabamdabam"
-# print(string_counter(x))
-
-# z = {item: [*x].count(item) for item in [*x]}
-# list_thing = z.items()
-# print(list_thing)
-# pffft = sorted(list_thing, key=lambda item: item[1])
-# print(pffft)
-# print(pffft[-1])
-
-
-# def string_counter(string):
-#     dictionary = {sign: [*string].count(sign) for sign in [*string]}
-#     # keys_list = [*dictionary]
-#     # values_list = [dictionary[key] for key in keys_list]
-#     # dict_to_list = list(zip(keys_list, values_list))
-#     # # dict_to_list = dictionary.items()
-#     # dict_to_list.sort(key=lambda item: item[1])
 #     dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
 #     answer = dict_to_list[-1]
 #     return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
-
-
-def sign_counter(string):
-    dictionary = {sign: [*string].count(sign) for sign in [*string]}
-    dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
-    answer = dict_to_list[-1]
-    return f"""In that sentence the most common sign is "{answer[0]}", it appeared {answer[1]} times"""
-
-
-def letter_counter(string):
-    dictionary = {sign: [*string].count(sign) for sign in [*string]}
-    dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
-    undesirable = [" ", "'", ",", ".", "!", "?", "/", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-    cleared = [item for item in dict_to_list if item[0] not in undesirable]
-    answer = cleared[-1]
-    return f"""In that sentence the most common letter is "{answer[0]}", it appeared {answer[1]} times"""
-
-
-print(sign_counter(x))
-
-sentence = "this is one of the most common interview questions, but I hope not for an intern, or a junior position..."
-
-print(sign_counter(sentence))
-print(letter_counter(sentence))
-
-
-# change introduced by Pawel
+#
+#
+# def letter_counter(string):
+#     dictionary = {sign: [*string].count(sign) for sign in [*string]}
+#     dict_to_list = sorted(dictionary.items(), key=lambda item: item[1])
+#     undesirable = [" ", "'", ",", ".", "!", "?", "/", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+#     cleared = [item for item in dict_to_list if item[0] not in undesirable]
+#     answer = cleared[-1]
+#     return f"""In that sentence the most common letter is "{answer[0]}", it appeared {answer[1]} times"""
+#
+#
+# print(sign_counter(x))
+#
+# sentence = "this is one of the most common interview questions, but I hope not for an intern, or a junior position..."
+#
+# print(sign_counter(sentence))
+# print(letter_counter(sentence))
+#
+#
+# # change introduced by Pawel
+# # def character_counter(string):
+# #     counted_chars = {char: string.count(char) for char in string}
+# #     result = max(counted_chars.items(), key=lambda item: item[1])
+# #     return f"""In that sentence the most common sign is "{result[0]}", it appeared {result[1]} times"""
+#
+#
 # def character_counter(string):
-#     counted_chars = {char: string.count(char) for char in string}
-#     result = max(counted_chars.items(), key=lambda item: item[1])
+#     undesirable = "1234567890 -=!@#$%^&*()_+/.,?><';:][}{}"
+#     counted_chars = {char: string.count(char) for char in string if char not in undesirable}
+#     result = max(counted_chars.items(), key=lambda char: char[1])
 #     return f"""In that sentence the most common sign is "{result[0]}", it appeared {result[1]} times"""
+#
+#
+# print(character_counter(x))
+# print(character_counter(sentence))
 
+# ---------------------------------------------------------------------------------------------------------------------
+#
+#
+# def permuting_array(array):
+#     n = len(array)
+#     working = True
+#     for number in array:
+#         if number not in range(1, n+1):
+#             array.remove(number)
+#     while working:
+#         working = False
+#         for number in range(1, n+1):
+#             if number in array:
+#                 if array.count(number) > 1:
+#                     array.remove(number)
+#                     working = True
+#                 else:
+#                     pass
+#             else:
+#                 array.append(number)
+#                 working = True
+#
+#
+# ar = [2, 2, 9]
+# permuting_array(ar)
+# print(ar)
 
-def character_counter(string):
-    undesirable = "1234567890 -=!@#$%^&*()_+/.,?><';:][}{}"
-    counted_chars = {char: string.count(char) for char in string if char not in undesirable}
-    result = max(counted_chars.items(), key=lambda char: char[1])
-    return f"""In that sentence the most common sign is "{result[0]}", it appeared {result[1]} times"""
+# ---------------------------------------------------------------------------------------------------------------------
 
-
-print(character_counter(x))
-print(character_counter(sentence))
